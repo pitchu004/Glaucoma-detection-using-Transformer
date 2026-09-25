@@ -1,13 +1,3 @@
-"""
-show_preprocessing.py
----------------------
-Visually shows what preprocessing and augmentation does to fundus images.
-Saves comparison images to results/preprocessing/ folder.
-
-Run:
-    python show_preprocessing.py
-"""
-
 import sys
 import os
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -22,9 +12,7 @@ import cv2
 
 os.makedirs("results/preprocessing", exist_ok=True)
 
-# ─────────────────────────────────────────
 #  PICK A SAMPLE IMAGE FROM YOUR DATASET
-# ─────────────────────────────────────────
 
 IMAGE_PATH = "./data/train/images/n0001.jpg"   # change if needed
 MASK_PATH  = "./data/train/mask/n0001.bmp"     # change if needed
@@ -46,11 +34,7 @@ print(f"Using mask  : {MASK_PATH}")
 orig_image = np.array(Image.open(IMAGE_PATH).convert("RGB"))
 orig_mask  = np.array(Image.open(MASK_PATH).convert("L"))
 
-
-# ─────────────────────────────────────────
 #  GRAPH 1 — PREPROCESSING STEPS
-#  Shows: Original → Resized → Normalized
-# ─────────────────────────────────────────
 
 def show_preprocessing_steps():
     fig, axes = plt.subplots(1, 3, figsize=(15, 5))
@@ -85,11 +69,7 @@ def show_preprocessing_steps():
     plt.show()
     plt.close()
 
-
-# ─────────────────────────────────────────
 #  GRAPH 2 — AUGMENTATION SAMPLES
-#  Shows 8 different augmented versions
-# ─────────────────────────────────────────
 
 def show_augmentation_samples():
     resized = cv2.resize(orig_image, (512, 512))
@@ -132,11 +112,7 @@ def show_augmentation_samples():
     plt.show()
     plt.close()
 
-
-# ─────────────────────────────────────────
 #  GRAPH 3 — IMAGE AND MASK PAIR
-#  Shows original image with its GT mask
-# ─────────────────────────────────────────
 
 def show_image_mask_pair():
     resized_img  = cv2.resize(orig_image, (512, 512))
@@ -180,12 +156,8 @@ def show_image_mask_pair():
     print(f"Saved → {path}")
     plt.show()
     plt.close()
-
-
-# ─────────────────────────────────────────
+    
 #  GRAPH 4 — PIXEL DISTRIBUTION
-#  Shows histogram before and after normalization
-# ─────────────────────────────────────────
 
 def show_pixel_distribution():
     resized    = cv2.resize(orig_image, (512, 512))
@@ -227,10 +199,7 @@ def show_pixel_distribution():
     plt.show()
     plt.close()
 
-
-# ─────────────────────────────────────────
 #  RUN ALL
-# ─────────────────────────────────────────
 
 if __name__ == "__main__":
     print("\nGenerating preprocessing visualizations...\n")
