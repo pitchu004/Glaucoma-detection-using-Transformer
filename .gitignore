@@ -1,0 +1,20 @@
+# Dataset
+data/train/
+data/val/
+data/test/
+
+# Model checkpoints
+checkpoints/
+
+# VS Code
+.vscode/
+
+# Codeforces/CP files
+.cph/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Model cache
+model/__pycache__/
