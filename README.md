@@ -35,7 +35,7 @@ pip install -r requirements.txt
 
 ## Dataset
 
-* Download the **REFUGE2 dataset** from: https://refuge.grand-challenge.org/
+* Download the **REFUGE2 dataset** from: https://www.kaggle.com/datasets/victorlemosml/refuge2
 * Place images in `data/images/` and masks in `data/masks/`.
 
 ## Training
