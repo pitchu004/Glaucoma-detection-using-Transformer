@@ -3,21 +3,33 @@
 ## Project Structure
 
 ```
-glaucoma_detection/
-│
-├── README.md
-├── requirements.txt
+## 📂 Project Structure
+
+```text
+Glaucoma-detection-using-Transformer/
 │
 ├── data/
-│   └── prepare_dataset.py       # Dataset loading & preprocessing
+│   └── prepare_dataset.py
 │
 ├── model/
-│   └── segformer_model.py       # SegFormer model definition
 │
-├── train.py                     # Training script
-├── evaluate.py                  # Evaluation & metrics
-├── predict.py                   # Inference & CDR computation
-└── utils.py                     # Augmentation, helpers
+├── predictions/
+│
+├── results/
+│
+├── train.py
+├── run_train.py
+├── evaluate.py
+├── predict.py
+├── utils.py
+├── show_preprocessing.py
+├── plot_graphs.py
+├── app.py
+│
+├── requirements.txt
+└── README.md
+```
+
 ```
 
 ## Setup
