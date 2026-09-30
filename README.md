@@ -2,9 +2,6 @@
 
 ## Project Structure
 
-```
-## 📂 Project Structure
-
 ```text
 Glaucoma-detection-using-Transformer/
 │
@@ -30,8 +27,6 @@ Glaucoma-detection-using-Transformer/
 └── README.md
 ```
 
-```
-
 ## Setup
 
 ```bash
@@ -39,20 +34,42 @@ pip install -r requirements.txt
 ```
 
 ## Dataset
-- Download REFUGE2 dataset from: https://refuge.grand-challenge.org/
-- Place images in `data/images/` and masks in `data/masks/`
+
+* Download the **REFUGE2 dataset** from: https://refuge.grand-challenge.org/
+* Place images in `data/images/` and masks in `data/masks/`.
 
 ## Training
+
 ```bash
 python train.py --epochs 50 --batch_size 8 --lr 6e-5
 ```
 
 ## Evaluation
+
 ```bash
 python evaluate.py --checkpoint checkpoints/best_model.pth
 ```
 
-## Inference
+## Predict
+
 ```bash
-python predict.py --image path/to/fundus_image.jpg
+python predict.py
+```
+
+## Plot Training Results
+
+```bash
+python plot_graphs.py
+```
+
+## View Preprocessing
+
+```bash
+python show_preprocessing.py
+```
+
+## Run Application
+
+```bash
+python app.py
 ```
